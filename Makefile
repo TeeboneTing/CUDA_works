@@ -1,9 +1,7 @@
 all:
-	nvcc  main.cu -o main
+	gcc main.c -o helloCV -I /usr/local/include/opencv -L /usr/local/lib -lm -lcv -lhighgui -lcvaux
 run:
-	time ./main testdata01 testout1
-	time ./main testdata02 testout2
-	time ./main testdata03 testout3
+	time ./helloCV beauty.bmp
 
 clean:
-	rm main
+	rm helloCV

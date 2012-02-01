@@ -1,51 +1,53 @@
-// CUDA programming: factorial problem CPU version
-
 #include <stdio.h>
-#include <math.h>
-#include <string.h>
 #include <stdlib.h>
+#include <cv.h>
+#include <math.h>
+#include <highgui.h>
+int main ( int argc ,  char  * argv [ ] ) 
+{ 
+    IplImage * img =  0 ;  
+    int height , width , step , channels ; 
+    uchar * data ; 
+    int i , j , k ; 
 
-void findFac( int* a,int* b,int* idx ,int n)
-{
-    int i;
-    for(i=0;i<n;i++){
-        if((*a)%(b[i]) == 0)
-            *idx = i;
-    }
-}
+    if ( argc < 2 ) { 
+        printf ( "Usage: main <image-file-name> \n \7 " ) ; 
+        exit ( 0 ) ; 
+    } 
 
+    // load an image   
+    img = cvLoadImage( argv [1],0 ) ; 
+    if ( ! img ) { 
+        printf ( "Could not load image file: %s \n " , argv [ 1 ] ) ; 
+        exit ( 0 ) ; 
+    } 
 
-//main routine
-int main(int argc, char** argv){
-    //check usage
-    if (argc != 3){
-        printf("usage: ./main [input file] [output file]\n");
-        return 1;
-    }
-    
-    int a_host;
-    double tmp;
-    int *b_host; //a for input num; b for sqrt array
-    int id_host;
-    FILE* input = fopen(argv[1],"r");
-    fscanf(input,"%d",&a_host);
-    fclose(input);
-    printf("the input number is: %d\n",a_host);
+    // get the image data 
+    height     = img -> height ; 
+    width      = img -> width ; 
+    step       = img -> widthStep ; 
+    channels   = img -> nChannels ; 
+    data       =  ( uchar * ) img -> imageData ; 
+    printf ( "Processing a %dx%d image with %d channels \n " , height , width , channels ) ; 
 
-    tmp = ceil(sqrt(a_host));
-    b_host = (int*)malloc(tmp*sizeof(int));
-    int i;
-    for(i=0;i<tmp;i++)
-        b_host[i] = i+1;
+    // create a window 
+    cvNamedWindow ( "mainWin" , CV_WINDOW_AUTOSIZE ) ;  
+    cvMoveWindow ( "mainWin" ,  100 ,  100 ) ; 
 
-    // do calculation on GPU
-    findFac(&a_host,b_host,&id_host, tmp);
-    //retrive value from GPU device
-    //print result
-    printf("%d =  %d x %d\n",a_host,b_host[id_host],a_host/b_host[id_host]);
+    // invert the image 
+    //相當於cvNot(img); 
+    // IplImage *pDstImg = cvCreateImage(cvGetSize(img),img->depth,img->nChannels); 
+    // cvNot(img, pDstImg); 
+    for ( i = 0 ; i < height ; i ++ )  for ( j = 0 ; j < width ; j ++ )  for ( k = 0 ; k < channels ; k ++ ) 
+        data [ i * step + j * channels + k ] = 255 - data [ i * step + j * channels + k ] ; 
 
-    free(b_host);
+    // show the image 
+    cvShowImage ( "mainWin" , img ) ; 
 
-    return 0;
+    // wait for a key 
+    cvWaitKey ( 0 ) ; 
 
+    // release the image 
+    cvReleaseImage ( & img ) ; 
+    return  0 ; 
 }
