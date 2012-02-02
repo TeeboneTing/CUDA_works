@@ -1,1 +1,9 @@
-Test123
+I try to do some DIP works like Gaussian Blur by CUDA.
+I have done this on CPU (serial program and openMP parallel version.)
+
+It's time to change method to GPU version!
+I use openCV to open and write image.
+
+
+
+Teebone Ding 2012 FEB 2
