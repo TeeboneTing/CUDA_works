@@ -9,7 +9,7 @@ __global__ void square_num(float* a, int n)
         a[id] = a[id]*a[id];
 }
 
-#define N 10
+#define N 100000000
 #define block_size 4
 
 //main routine
