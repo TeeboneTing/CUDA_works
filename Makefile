@@ -111,6 +111,21 @@ HelloCV/fast:
 	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/build
 .PHONY : HelloCV/fast
 
+# target to build an object file
+main.o:
+	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/main.o
+.PHONY : main.o
+
+# target to preprocess a source file
+main.i:
+	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/main.i
+.PHONY : main.i
+
+# target to generate assembly for a file
+main.s:
+	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/main.s
+.PHONY : main.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -120,6 +135,9 @@ help:
 	@echo "... HelloCV"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
