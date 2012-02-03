@@ -53,38 +53,38 @@ CMAKE_SOURCE_DIR = /Users/teebone/git_projects/CUDA_works
 CMAKE_BINARY_DIR = /Users/teebone/git_projects/CUDA_works
 
 #=============================================================================
-# Target rules for target CMakeFiles/HelloCV.dir
+# Target rules for target CMakeFiles/hello.dir
 
 # All Build rule for target.
-CMakeFiles/HelloCV.dir/all:
-	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/depend
-	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/build
+CMakeFiles/hello.dir/all:
+	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/depend
+	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /Users/teebone/git_projects/CUDA_works/CMakeFiles  1
-	@echo "Built target HelloCV"
-.PHONY : CMakeFiles/HelloCV.dir/all
+	@echo "Built target hello"
+.PHONY : CMakeFiles/hello.dir/all
 
 # Include target in all.
-all: CMakeFiles/HelloCV.dir/all
+all: CMakeFiles/hello.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/HelloCV.dir/rule: cmake_check_build_system
+CMakeFiles/hello.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/teebone/git_projects/CUDA_works/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/HelloCV.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hello.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/teebone/git_projects/CUDA_works/CMakeFiles 0
-.PHONY : CMakeFiles/HelloCV.dir/rule
+.PHONY : CMakeFiles/hello.dir/rule
 
 # Convenience name for target.
-HelloCV: CMakeFiles/HelloCV.dir/rule
-.PHONY : HelloCV
+hello: CMakeFiles/hello.dir/rule
+.PHONY : hello
 
 # clean rule for target.
-CMakeFiles/HelloCV.dir/clean:
-	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/clean
-.PHONY : CMakeFiles/HelloCV.dir/clean
+CMakeFiles/hello.dir/clean:
+	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/clean
+.PHONY : CMakeFiles/hello.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/HelloCV.dir/clean
+clean: CMakeFiles/hello.dir/clean
 .PHONY : clean
 
 #=============================================================================

@@ -1,1 +1,1 @@
-/Users/teebone/git_projects/CUDA_works/CMakeFiles/HelloCV.dir
+/Users/teebone/git_projects/CUDA_works/CMakeFiles/hello.dir

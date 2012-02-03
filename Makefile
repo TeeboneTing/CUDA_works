@@ -99,31 +99,31 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named HelloCV
+# Target rules for targets named hello
 
 # Build rule for target.
-HelloCV: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 HelloCV
-.PHONY : HelloCV
+hello: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hello
+.PHONY : hello
 
 # fast build rule for target.
-HelloCV/fast:
-	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/build
-.PHONY : HelloCV/fast
+hello/fast:
+	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
+.PHONY : hello/fast
 
 # target to build an object file
 main.o:
-	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/main.o
+	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/main.o
 .PHONY : main.o
 
 # target to preprocess a source file
 main.i:
-	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/main.i
+	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/main.i
 .PHONY : main.i
 
 # target to generate assembly for a file
 main.s:
-	$(MAKE) -f CMakeFiles/HelloCV.dir/build.make CMakeFiles/HelloCV.dir/main.s
+	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/main.s
 .PHONY : main.s
 
 # Help Target
@@ -132,8 +132,8 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... HelloCV"
 	@echo "... edit_cache"
+	@echo "... hello"
 	@echo "... rebuild_cache"
 	@echo "... main.o"
 	@echo "... main.i"
